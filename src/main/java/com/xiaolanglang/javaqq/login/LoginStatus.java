@@ -5,5 +5,5 @@ package com.xiaolanglang.javaqq.login;
  * Created by 阳 on 14-1-29.
  */
 public enum LoginStatus {
-    SUCCESS, NEED_CAPTCHA, NEED_NOT_CAPTCHA, UNDEFINED, USER_OR_PASSWORD_ERROR
+    SUCCESS, NEED_CAPTCHA, NEED_NOT_CAPTCHA, UNDEFINED, CAPTCHA_ERROR, ERROR, USER_OR_PASSWORD_ERROR
 }

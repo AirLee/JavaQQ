@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c23e3b9-06ce-463f-8a0d-277bf69496c0" name="Default" comment="重构验证码模块&#10;">
+    <list default="true" id="5c23e3b9-06ce-463f-8a0d-277bf69496c0" name="Default" comment="添加验证码支持">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__UUWise_UUWise_1_0_SNAPSHOT.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaQQ.iml" afterPath="$PROJECT_DIR$/JavaQQ.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatus.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" afterPath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\IdeaProjects\JavaQQ\src\main\java\com\xiaolanglang\javaqq\login\Captcha.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/Captcha.java" />
-      <change type="MOVED" beforePath="D:\IdeaProjects\JavaQQ\src\main\java\com\xiaolanglang\javaqq\login\CaptchaBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" />
-      <change type="MOVED" beforePath="D:\IdeaProjects\JavaQQ\src\main\java\com\xiaolanglang\javaqq\login\CaptchaImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaImpl.java" />
     </list>
     <ignored path="JavaQQ.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,11 +75,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CookieStoreFactory.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CookieStoreFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/CookieStoreFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="15" selection-start="178" selection-end="178" vertical-scroll-proportion="0.31764707" vertical-offset="0" max-vertical-offset="504">
-              <folding />
+            <state line="14" column="34" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaptchaUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="522">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,7 +100,7 @@
       <file leaf-file-name="Captcha.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/Captcha.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="2" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="414">
+            <state line="5" column="2" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
               <folding />
             </state>
           </provider>
@@ -92,7 +109,7 @@
       <file leaf-file-name="CaptchaBuilder.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="87" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="1296">
+            <state line="28" column="26" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="1111" max-vertical-offset="1476">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setCaptcha#0;class#CaptchaBuilder#0" expanded="true" />
@@ -103,19 +120,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Md5.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/Md5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="499" max-vertical-offset="1476">
+            <state line="74" column="3" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="1476">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,13 +131,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestJavaQqImpl.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TestJavaQqImpl.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="65" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="1080">
+            <state line="100" column="10" selection-start="3665" selection-end="3665" vertical-scroll-proportion="0.5441176" vertical-offset="1615" max-vertical-offset="1998">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UUWise.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/UUWise/UUWise/1.0-SNAPSHOT/UUWise-1.0-SNAPSHOT.jar!/com/xiaolanglang/uuwise/UUWise.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="0" selection-start="2476" selection-end="2476" vertical-scroll-proportion="-7.48" vertical-offset="893" max-vertical-offset="1188">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,18 +182,43 @@
         <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.2/httpclient-4.3.2-sources.jar!/org/apache/http/impl/client/HttpClientBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="221" column="16" selection-start="9431" selection-end="9431" vertical-scroll-proportion="0.0" vertical-offset="1828" max-vertical-offset="13698">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileInputStream.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/FileInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="3" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0" vertical-offset="7081" max-vertical-offset="7614">
               <folding>
-                <element signature="e#0#16018#0" expanded="false" />
+                <element signature="e#0#36514#0" expanded="false" />
                 <element signature="imports" expanded="false" />
+                <element signature="method#setRequestExecutor#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setHostnameVerifier#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setSslcontext#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setSSLSocketFactory#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setMaxConnTotal#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setMaxConnPerRoute#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultSocketConfig#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultConnectionConfig#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setConnectionManager#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setConnectionReuseStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setKeepAliveStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setTargetAuthenticationStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setProxyAuthenticationStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setUserTokenHandler#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setSchemePortResolver#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setUserAgent#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultHeaders#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setHttpProcessor#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setRetryHandler#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setProxy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setRoutePlanner#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setRedirectStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setConnectionBackoffStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setBackoffManager#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setServiceUnavailableRetryStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultCookieStore#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultCredentialsProvider#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultAuthSchemeRegistry#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultCookieSpecRegistry#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="method#setDefaultRequestConfig#0;class#HttpClientBuilder#0" expanded="false" />
+                <element signature="e#26460#26489#0" expanded="false" />
+                <element signature="e#26632#26657#0" expanded="false" />
+                <element signature="e#34310#34330#0" expanded="false" />
+                <element signature="e#34910#34930#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -207,8 +249,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/HttpClientFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQq.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/MD.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/MD5.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/CaptchaImpl.java" />
@@ -218,11 +258,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/CaptchaBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/Captcha.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/Captcha.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/Md5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaUtils.java" />
+        <option value="$MAVEN_REPOSITORY$/UUWise/UUWise/1.0-SNAPSHOT/UUWise-1.0-SNAPSHOT.jar!/com/xiaolanglang/uuwise/UUWise.class" />
+        <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" />
       </list>
     </option>
   </component>
@@ -247,24 +291,6 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="Dependencies" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="JavaQQ" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Dependencies" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="org.apache.httpcomponents:httpclient:4.3.2" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -330,6 +356,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="JavaQQ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaQQ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaQQ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -543,7 +587,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq" />
@@ -555,7 +599,7 @@
       <recent name="com.xiaolanglang.javaqq.login.captcha" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestJavaQqImpl">
+  <component name="RunManager" selected="JUnit.TestJavaQqImpl.testFirstLogin">
     <configuration default="false" name="TestJavaQqImpl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -625,6 +669,62 @@
       <option name="PACKAGE_NAME" value="com.xiaolanglang.javaqq.test.login" />
       <option name="MAIN_CLASS_NAME" value="com.xiaolanglang.javaqq.test.login.TestJavaQqImpl" />
       <option name="METHOD_NAME" value="testMd5" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestJavaQqImpl.testGetBytes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.xiaolanglang.javaqq.test.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="JavaQQ" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.xiaolanglang.javaqq.test.login" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaolanglang.javaqq.test.login.TestJavaQqImpl" />
+      <option name="METHOD_NAME" value="testGetBytes" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestJavaQqImpl.testIdentify" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.xiaolanglang.javaqq.test.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="JavaQQ" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.xiaolanglang.javaqq.test.login" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaolanglang.javaqq.test.login.TestJavaQqImpl" />
+      <option name="METHOD_NAME" value="testIdentify" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -851,16 +951,20 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testFirstLogin" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testMd5" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testGetBytes" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testIdentify" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testMd5" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testFirstLogin" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testFirstLogin" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testIdentify" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testGetBytes" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestJavaQqImpl.testMd5" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -893,7 +997,7 @@
       <updated>1390928292939</updated>
       <workItem from="1390928294216" duration="21000" />
       <workItem from="1390928316245" duration="7701000" />
-      <workItem from="1391009606563" duration="9951000" />
+      <workItem from="1391009606563" duration="14488000" />
     </task>
     <task id="LOCAL-00001" summary="重写…………">
       <created>1390929863407</created>
@@ -907,11 +1011,15 @@
       <created>1391019049728</created>
       <updated>1391019049728</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="重构验证码模块&#10;">
+      <created>1391019571421</created>
+      <updated>1391019571421</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17673000" />
+    <option name="totallyTimeSpent" value="22210000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -948,7 +1056,7 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -960,7 +1068,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34017095" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33846155" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -982,7 +1090,8 @@
     <MESSAGE value="完成检查是否需要验证码这一步" />
     <MESSAGE value="重构验证码模块" />
     <MESSAGE value="重构验证码模块&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构验证码模块&#10;" />
+    <MESSAGE value="添加验证码支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加验证码支持" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1106,27 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/pattern/PatternUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.2/httpclient-4.3.2.jar!/org/apache/http/impl/client/HttpClientBuilder.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="64" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.0" vertical-offset="812" max-vertical-offset="2736">
@@ -1137,20 +1225,80 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.2/httpclient-4.3.2-sources.jar!/org/apache/http/impl/client/HttpClientBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="221" column="16" selection-start="9431" selection-end="9431" vertical-scroll-proportion="0.0" vertical-offset="1828" max-vertical-offset="13698">
-          <folding />
+          <folding>
+            <element signature="e#0#36514#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="method#setRequestExecutor#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setHostnameVerifier#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setSslcontext#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setSSLSocketFactory#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setMaxConnTotal#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setMaxConnPerRoute#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultSocketConfig#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultConnectionConfig#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setConnectionManager#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setConnectionReuseStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setKeepAliveStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setTargetAuthenticationStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setProxyAuthenticationStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setUserTokenHandler#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setSchemePortResolver#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setUserAgent#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultHeaders#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setHttpProcessor#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setRetryHandler#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setProxy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setRoutePlanner#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setRedirectStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setConnectionBackoffStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setBackoffManager#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setServiceUnavailableRetryStrategy#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultCookieStore#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultCredentialsProvider#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultAuthSchemeRegistry#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultCookieSpecRegistry#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="method#setDefaultRequestConfig#0;class#HttpClientBuilder#0" expanded="false" />
+            <element signature="e#26460#26489#0" expanded="false" />
+            <element signature="e#26632#26657#0" expanded="false" />
+            <element signature="e#34310#34330#0" expanded="false" />
+            <element signature="e#34910#34930#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="103" selection-end="103" vertical-scroll-proportion="0.3243243" vertical-offset="0" max-vertical-offset="333">
+        <state line="5" column="3" selection-start="85" selection-end="85" vertical-scroll-proportion="0.16917293" vertical-offset="0" max-vertical-offset="532">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatusChecker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/exception/QqException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+        <state line="6" column="13" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/CookieStoreFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="34" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/HttpClientFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="19" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="404" max-vertical-offset="936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <folding />
         </state>
       </provider>
@@ -1162,37 +1310,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatusChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="307" selection-end="307" vertical-scroll-proportion="0.33221477" vertical-offset="135" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/HttpClientFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="427" selection-end="427" vertical-scroll-proportion="0.33221477" vertical-offset="45" max-vertical-offset="936">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/exception/QqException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="124" selection-end="124" vertical-scroll-proportion="0.33221477" vertical-offset="9" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="23" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.33221477" vertical-offset="369" max-vertical-offset="720">
+        <state line="12" column="5" selection-start="313" selection-end="313" vertical-scroll-proportion="0.5675676" vertical-offset="27" max-vertical-offset="360">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/Md5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="499" max-vertical-offset="1476">
+        <state line="74" column="3" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="1476">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/UUWise/UUWise/1.0-SNAPSHOT/UUWise-1.0-SNAPSHOT.jar!/com/xiaolanglang/uuwise/UUWise.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="2476" selection-end="2476" vertical-scroll-proportion="-7.48" vertical-offset="893" max-vertical-offset="1188">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="19" selection-start="1318" selection-end="1318" vertical-scroll-proportion="0.7837838" vertical-offset="513" max-vertical-offset="1026">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/pattern/PatternUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="17" selection-start="398" selection-end="398" vertical-scroll-proportion="0.4774775" vertical-offset="93" max-vertical-offset="432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.5675676" vertical-offset="135" max-vertical-offset="702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="37" selection-start="2718" selection-end="2718" vertical-scroll-proportion="0.5482866" vertical-offset="544" max-vertical-offset="918">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1201,7 +1374,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="87" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="1296">
+        <state line="28" column="26" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="1111" max-vertical-offset="1476">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setCaptcha#0;class#CaptchaBuilder#0" expanded="true" />
@@ -1211,28 +1384,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="167" selection-start="2099" selection-end="2099" vertical-scroll-proportion="0.33333334" vertical-offset="463" max-vertical-offset="756">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="32" column="42" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.27941176" vertical-offset="373" max-vertical-offset="900">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="65" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="1080">
+        <state line="100" column="10" selection-start="3665" selection-end="3665" vertical-scroll-proportion="0.5441176" vertical-offset="1615" max-vertical-offset="1998">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/CookieStoreFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="178" selection-end="178" vertical-scroll-proportion="0.31764707" vertical-offset="0" max-vertical-offset="504">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,7 +1477,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <last-edited>Maven: commons-beanutils:commons-beanutils:1.8.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

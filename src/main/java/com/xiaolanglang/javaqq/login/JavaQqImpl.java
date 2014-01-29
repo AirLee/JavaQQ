@@ -3,6 +3,7 @@ package com.xiaolanglang.javaqq.login;
 import com.xiaolanglang.javaqq.httpclient.ResponseUtils;
 import com.xiaolanglang.javaqq.login.captcha.Captcha;
 import com.xiaolanglang.javaqq.login.captcha.CaptchaBuilder;
+import com.xiaolanglang.javaqq.pattern.PatternUtils;
 import org.apache.http.client.methods.HttpGet;
 
 import java.io.IOException;
@@ -27,10 +28,18 @@ public class JavaQqImpl {
         return CaptchaBuilder.create().parsingResult(result).build();
     }
 
-    public String firstLogin(Captcha captcha) throws IOException {
-        HttpGet httpGet = new HttpGet("https://ssl.ptlogin2.qq.com/login?u=" + this.user + "&p=" + new Md5().getPassword(captcha.getHexUin(), this.pass, captcha.getCaptcha()) + "&verifycode=" + captcha.getCaptcha() + "&webqq_type=10&remember_uin=1&login2qq=1&aid=1003903&u1=http%3A%2F%2Fweb.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&h=1&ptredirect=0&ptlang=2052&from_ui=1&pttype=1&dumy=&fp=loginerroralert&action=2-17-15730&mibao_css=m_webqq&t=1&g=1&js_type=0&js_ver=10031&login_sig=a27Ga1qNTG6ldZNIXhgJJrSHeBBw-OQBmso*pQURbTJcfZ9jNZM3Nk7Hb8ffP9fB");
+    public LoginStatus firstLogin(Captcha captcha) throws IOException {
+        HttpGet httpGet = new HttpGet("https://ssl.ptlogin2.qq.com/login?u=" + this.user + "&p=" + new Md5().getPassword(captcha.getHexUin(), this.pass, captcha.getCaptcha()) + "&verifycode=" + captcha.getCaptcha() + "&webqq_type=10&remember_uin=1&login2qq=0&aid=1003903&u1=http%3A%2F%2Fweb2.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&h=1&ptredirect=0&ptlang=2052&daid=164&from_ui=1&pttype=1&dumy=&fp=loginerroralert&action=1-15-19876&mibao_css=m_webqq&t=1&g=1&js_type=0&js_ver=10042&login_sig=YNdObhfjvGdF-m6iTIuJMGfF2KhCMD-IvMTFxBwJcH0zdxfAM*5pzM9CFmYOVtFi");
         httpGet.addHeader("Referer", "Referer:https://ui.ptlogin2.qq.com/cgi-bin/login?daid=164&target=self&style=5&mibao_css=m_webqq&appid=1003903&enable_qlogin=0&no_verifyimg=1&s_url=http%3A%2F%2Fweb2.qq.com%2Floginproxy.html&f_url=loginerroralert&strong_login=0&login_state=10&t=20131202001");
-        return new ResponseUtils().getResultString(httpGet);
+        String result = new ResponseUtils().getResultString(httpGet);
+        if (result.contains("密码不正确"))
+            return LoginStatus.USER_OR_PASSWORD_ERROR;
+        if (result.contains("网络连接出现异常"))
+            return LoginStatus.CAPTCHA_ERROR;
+        String secondUrl = new PatternUtils().findFirst("(?<=ptuiCB\\('0','0',').*?(?=')", result);
+        if ("".equals(secondUrl))
+            return LoginStatus.ERROR;
+        HttpGet secondGet = new HttpGet(secondUrl);
+        return new ResponseUtils().getResultString(secondGet).contains("登录成功") ? LoginStatus.SUCCESS : LoginStatus.ERROR;
     }
-
 }

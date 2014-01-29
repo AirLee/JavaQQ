@@ -26,8 +26,14 @@ public class ResponseUtils {
         return stringBuilder.toString();
     }
 
-    public HttpResponse getResponse(HttpUriRequest httpUriRequest) throws IOException {
-        return HttpClientFactory.getHttpClient().execute(httpUriRequest);
+    public byte[] getBytes(HttpUriRequest httpUriRequest) throws IOException {
+        InputStream inputStream = getInputStream(httpUriRequest);
+        byte[] bytes = new byte[inputStream.available()];
+        if ( inputStream.read(bytes)!= -1){
+            throw new IOException("文件读取不完整");
+        }
+        inputStream.close();
+        return bytes;
     }
 
     public InputStream getInputStream(HttpUriRequest httpUriRequest) throws IOException {
@@ -35,6 +41,10 @@ public class ResponseUtils {
         if (httpResponse.getStatusLine().getStatusCode() != 200)
             throw new IOException("返回码不为200！");
         return httpResponse.getEntity().getContent();
+    }
+
+    public HttpResponse getResponse(HttpUriRequest httpUriRequest) throws IOException {
+        return HttpClientFactory.getHttpClient().execute(httpUriRequest);
     }
 
 }

@@ -47,6 +47,16 @@ public class CaptchaBuilder {
         return this;
     }
 
+    public CaptchaBuilder pasingResult(Captcha captcha) {
+        if ("".equals(this.captcha))
+            this.captcha = captcha.getCaptcha();
+        if ("".equals(this.hexUin))
+            this.hexUin = captcha.getHexUin();
+        if (this.loginStatus == LoginStatus.UNDEFINED)
+            this.loginStatus = captcha.getLoginStatus();
+        return this;
+    }
+
     public Captcha build() {
         return new CaptchaImpl(this.captcha, this.hexUin, this.loginStatus);
     }
