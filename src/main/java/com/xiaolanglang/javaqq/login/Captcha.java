@@ -1,22 +1,15 @@
 package com.xiaolanglang.javaqq.login;
 
 /**
- * 验证码的相关类
- * Created by 阳 on 14-1-29.
+ *
+ * Created by 阳 on 14-1-30.
  */
-public class Captcha {
-    private String captchaString;
+public interface Captcha {
 
-    protected Captcha(String captchaString) {
-        this.captchaString = captchaString;
-    }
+    public LoginStatus getLoginStatus();
 
-    public LoginStatus getLoginStatus() {
-        return new LoginStatusCheck().check(captchaString);
-    }
+    public String getCaptcha();
 
-    @Override
-    public String toString() {
-        return captchaString;
-    }
+    public String getHexUin();
+
 }
