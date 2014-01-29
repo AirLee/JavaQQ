@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c23e3b9-06ce-463f-8a0d-277bf69496c0" name="Default" comment="添加验证码支持">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__UUWise_UUWise_1_0_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaQQ.iml" afterPath="$PROJECT_DIR$/JavaQQ.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/JavaQqImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatus.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/httpclient/ResponseUtils.java" />
+    <list default="true" id="5c23e3b9-06ce-463f-8a0d-277bf69496c0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" afterPath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaQQ.iws" />
@@ -120,21 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Md5.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Md5.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/Md5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="3" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="1476">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestJavaQqImpl.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="10" selection-start="3665" selection-end="3665" vertical-scroll-proportion="0.5441176" vertical-offset="1615" max-vertical-offset="1998">
+            <state line="7" column="11" selection-start="175" selection-end="175" vertical-scroll-proportion="0.3853211" vertical-offset="0" max-vertical-offset="1476">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,6 +154,15 @@
         <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/jre/lib/rt.jar!/sun/misc/URLClassPath.class">
           <provider selected="true" editor-type-id="text-editor">
             <state line="34" column="29" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.0" vertical-offset="1784" max-vertical-offset="2304">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginStatusChecker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatusChecker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="5" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
@@ -997,7 +987,7 @@
       <updated>1390928292939</updated>
       <workItem from="1390928294216" duration="21000" />
       <workItem from="1390928316245" duration="7701000" />
-      <workItem from="1391009606563" duration="14488000" />
+      <workItem from="1391009606563" duration="14686000" />
     </task>
     <task id="LOCAL-00001" summary="重写…………">
       <created>1390929863407</created>
@@ -1015,11 +1005,15 @@
       <created>1391019571421</created>
       <updated>1391019571421</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加验证码支持">
+      <created>1391024112780</created>
+      <updated>1391024112780</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22210000" />
+    <option name="totallyTimeSpent" value="22408000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1091,7 +1085,8 @@
     <MESSAGE value="重构验证码模块" />
     <MESSAGE value="重构验证码模块&#10;" />
     <MESSAGE value="添加验证码支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加验证码支持" />
+    <MESSAGE value="重构……" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构……" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1310,22 +1305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatusChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="313" selection-end="313" vertical-scroll-proportion="0.5675676" vertical-offset="27" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/Md5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="3" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="1476">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
@@ -1393,7 +1372,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="10" selection-start="3665" selection-end="3665" vertical-scroll-proportion="0.5441176" vertical-offset="1615" max-vertical-offset="1998">
+        <state line="107" column="1" selection-start="3856" selection-end="3856" vertical-scroll-proportion="0.62941176" vertical-offset="1712" max-vertical-offset="2052">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/LoginStatusChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/Md5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="11" selection-start="175" selection-end="175" vertical-scroll-proportion="0.3853211" vertical-offset="0" max-vertical-offset="1476">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

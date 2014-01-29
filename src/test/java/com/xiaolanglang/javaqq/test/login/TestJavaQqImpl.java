@@ -67,9 +67,7 @@ public class TestJavaQqImpl {
         Captcha captcha = javaQq.checkCaptcha();
         if (captcha.getLoginStatus() == LoginStatus.NEED_CAPTCHA) {
             System.out.println("需要获取验证码！");
-            UUWise uuWise = new UUWise("gy911201", "Gaoyang1201");
-            uuWise.login();
-            uuWise.setCodeType("1106");
+            UUWise uuWise = getUUWise();
             byte[] bytes = new CaptchaUtils().getCaptchaImage(user);
             String[] results = uuWise.uploadImage(bytes);
             captcha = new CaptchaUtils().getCaptcha(captcha, results[1]);
@@ -89,9 +87,7 @@ public class TestJavaQqImpl {
 
     @Test
     public void testIdentify() throws Exception {
-        UUWise uuWise = new UUWise("gy911201", "");
-        uuWise.login();
-        uuWise.setCodeType("1106");
+        UUWise uuWise = getUUWise();
         FileInputStream fis = new FileInputStream(new File("src/test/resources/test.jpg"));
         byte[] bytes = new byte[fis.available()];
         if (fis.read(bytes) != -1)
@@ -101,5 +97,12 @@ public class TestJavaQqImpl {
         System.out.println("captchaid = " + results[0]);
         System.out.println("captcha = " + results[1]);
         assertEquals("ohbyj", results[1].toLowerCase());
+    }
+
+    private UUWise getUUWise() throws IOException {
+        UUWise uuWise = new UUWise("gy911201", "");
+        uuWise.login();
+        uuWise.setCodeType("1106");
+        return uuWise;
     }
 }
