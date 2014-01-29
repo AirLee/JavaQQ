@@ -1,9 +1,11 @@
-package com.xiaolanglang.javaqq.login;
+package com.xiaolanglang.javaqq.login.captcha;
 
+import com.xiaolanglang.javaqq.login.LoginStatus;
+import com.xiaolanglang.javaqq.login.LoginStatusChecker;
 import com.xiaolanglang.javaqq.pattern.PatternUtils;
 
 /**
- *
+ * Captcha的构建类
  * Created by 阳 on 14-1-30.
  */
 public class CaptchaBuilder {
@@ -49,19 +51,16 @@ public class CaptchaBuilder {
         return new CaptchaImpl(this.captcha, this.hexUin, this.loginStatus);
     }
 
-    public LoginStatus getLoginStatus() {
+    private LoginStatus getLoginStatus() {
         return new LoginStatusChecker().checkInLogin(new PatternUtils().findFirst("(?<=ptui_checkVC\\(').*?(?=')", captchaString));
     }
 
-    public String getCaptcha() {
+    private String getCaptcha() {
         return new PatternUtils().findFirst("(?<=',').*?(?=',')", captchaString);
     }
 
-    public String getHexUin() {
+    private String getHexUin() {
         return new PatternUtils().findFirst("(?<=',')\\\\x.*?(?='\\);)", captchaString);
     }
 
-    public String toString() {
-        return captchaString;
-    }
 }

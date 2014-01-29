@@ -1,6 +1,8 @@
 package com.xiaolanglang.javaqq.login;
 
 import com.xiaolanglang.javaqq.httpclient.ResponseUtils;
+import com.xiaolanglang.javaqq.login.captcha.Captcha;
+import com.xiaolanglang.javaqq.login.captcha.CaptchaBuilder;
 import org.apache.http.client.methods.HttpGet;
 
 import java.io.IOException;
@@ -10,8 +12,8 @@ import java.io.IOException;
  * Created by 阳 on 14-1-29.
  */
 public class JavaQqImpl {
-    private String user;
-    private String pass;
+    private final String user;
+    private final String pass;
 
     public JavaQqImpl(String user, String pass) {
         this.user = user;

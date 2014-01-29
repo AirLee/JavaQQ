@@ -1,4 +1,6 @@
-package com.xiaolanglang.javaqq.login;
+package com.xiaolanglang.javaqq.login.captcha;
+
+import com.xiaolanglang.javaqq.login.LoginStatus;
 
 /**
  * 验证码的相关类
@@ -9,7 +11,7 @@ public class CaptchaImpl implements Captcha {
     private final String hexUin;
     private final LoginStatus loginStatus;
 
-    protected CaptchaImpl(String captcha, String hexUin, LoginStatus loginStatus) {
+    CaptchaImpl(String captcha, String hexUin, LoginStatus loginStatus) {
         this.captcha = captcha;
         this.hexUin = hexUin;
         this.loginStatus = loginStatus;

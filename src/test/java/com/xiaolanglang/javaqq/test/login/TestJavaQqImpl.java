@@ -1,6 +1,8 @@
 package com.xiaolanglang.javaqq.test.login;
 
 import com.xiaolanglang.javaqq.login.*;
+import com.xiaolanglang.javaqq.login.captcha.Captcha;
+import com.xiaolanglang.javaqq.login.captcha.CaptchaBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ import static org.junit.Assert.assertTrue;
  * Created by 阳 on 14-1-29.
  */
 public class TestJavaQqImpl {
-    JavaQqImpl javaQq;
+    private JavaQqImpl javaQq;
 
     @Before
     public void setUp() throws Exception {

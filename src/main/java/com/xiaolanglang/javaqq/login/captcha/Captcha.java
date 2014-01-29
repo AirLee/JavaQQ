@@ -1,4 +1,6 @@
-package com.xiaolanglang.javaqq.login;
+package com.xiaolanglang.javaqq.login.captcha;
+
+import com.xiaolanglang.javaqq.login.LoginStatus;
 
 /**
  *
