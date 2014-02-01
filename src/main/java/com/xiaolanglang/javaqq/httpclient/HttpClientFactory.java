@@ -1,5 +1,6 @@
 package com.xiaolanglang.javaqq.httpclient;
 
+import com.xiaolanglang.javaqq.httpclient.cookie.CookieStoreFactory;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;

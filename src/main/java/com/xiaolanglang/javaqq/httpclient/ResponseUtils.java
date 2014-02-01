@@ -28,9 +28,11 @@ public class ResponseUtils {
 
     public byte[] getBytes(HttpUriRequest httpUriRequest) throws IOException {
         InputStream inputStream = getInputStream(httpUriRequest);
-        byte[] bytes = new byte[inputStream.available()];
-        if ( inputStream.read(bytes)!= -1){
-            throw new IOException("文件读取不完整");
+        int size = inputStream.available();
+        byte[] bytes = new byte[size];
+        if ((inputStream.read(bytes)) != size) {
+            if (inputStream.available() != 0)
+                throw new IOException("文件读取不完整");
         }
         inputStream.close();
         return bytes;

@@ -1,11 +1,14 @@
 package com.xiaolanglang.javaqq.test.login;
 
-import com.xiaolanglang.javaqq.login.JavaQqImpl;
-import com.xiaolanglang.javaqq.login.LoginStatus;
-import com.xiaolanglang.javaqq.login.Md5;
+import com.xiaolanglang.javaqq.clientid.ClientId;
+import com.xiaolanglang.javaqq.login.FirstLogin;
+import com.xiaolanglang.javaqq.login.SecondLogin;
 import com.xiaolanglang.javaqq.login.captcha.Captcha;
 import com.xiaolanglang.javaqq.login.captcha.CaptchaBuilder;
 import com.xiaolanglang.javaqq.login.captcha.CaptchaUtils;
+import com.xiaolanglang.javaqq.login.md5.Md5;
+import com.xiaolanglang.javaqq.login.sig.LoginSig;
+import com.xiaolanglang.javaqq.login.status.LoginStatus;
 import com.xiaolanglang.uuwise.UUWise;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,35 +26,37 @@ import static org.junit.Assert.assertTrue;
  * Created by 阳 on 14-1-29.
  */
 public class TestJavaQqImpl {
-    private JavaQqImpl javaQq;
+    private FirstLogin javaQq;
     private String user;
 
     @Before
     public void setUp() throws Exception {
         this.user = "2829320014";
-        javaQq = new JavaQqImpl(user, "");
+        javaQq = new FirstLogin(user, "");
     }
 
     @Test
     public void testCheckCaptcha() throws Exception {
         Captcha captcha = CaptchaBuilder.create().parsingResult("ptui_checkVC('0','!CON','\\x00\\x00\\x00\\x00\\xa8\\xa3\\xff\\x4e');").build();
-        assertEquals("[NEED_NOT_CAPTCHA,\\x00\\x00\\x00\\x00\\xa8\\xa3\\xff\\x4e,!CON]", captcha.toString());
+        assertEquals("[\\x00\\x00\\x00\\x00\\xa8\\xa3\\xff\\x4e,!CON]", captcha.toString());
     }
 
     @Test
     public void testGetCaptcha() throws Exception {
-        Captcha captchaImpl = javaQq.checkCaptcha();
+        String loginSig = new LoginSig().getLoginSig();
+        Captcha captchaImpl = javaQq.checkCaptcha(loginSig);
         String result = captchaImpl.getCaptcha();
-        System.out.println("getCaptcha = " + result);
-        if (captchaImpl.getLoginStatus() == LoginStatus.NEED_NOT_CAPTCHA)
+        System.out.println("setNewCaptcha = " + result);
+        if (captchaImpl.checkCaptcha() == LoginStatus.NEED_NOT_CAPTCHA)
             assertTrue(result.length() == 4);
-        else if (captchaImpl.getLoginStatus() == LoginStatus.NEED_CAPTCHA)
+        else if (captchaImpl.checkCaptcha() == LoginStatus.NEED_CAPTCHA)
             assertTrue(result.length() > 4);
     }
 
     @Test
     public void testGetHexUin() throws Exception {
-        String result = javaQq.checkCaptcha().getHexUin();
+        String loginSig = new LoginSig().getLoginSig();
+        String result = javaQq.checkCaptcha(loginSig).getHexUin();
         System.out.println("hexUin = " + result);
     }
 
@@ -63,16 +68,22 @@ public class TestJavaQqImpl {
     }
 
     @Test
+    public void testGetLoginSig() throws Exception {
+        System.out.println("getLoginSig = " + new LoginSig().getLoginSig());
+    }
+
+    @Test
     public void testFirstLogin() throws Exception {
-        Captcha captcha = javaQq.checkCaptcha();
-        if (captcha.getLoginStatus() == LoginStatus.NEED_CAPTCHA) {
+        String loginSig = new LoginSig().getLoginSig();
+        Captcha captcha = javaQq.checkCaptcha(loginSig);
+        if (captcha.checkCaptcha() == LoginStatus.NEED_CAPTCHA) {
             System.out.println("需要获取验证码！");
             UUWise uuWise = getUUWise();
             byte[] bytes = new CaptchaUtils().getCaptchaImage(user);
             String[] results = uuWise.uploadImage(bytes);
-            captcha = new CaptchaUtils().getCaptcha(captcha, results[1]);
+            captcha = new CaptchaUtils().setNewCaptcha(captcha, results[1]);
         }
-        LoginStatus result = javaQq.firstLogin(captcha);
+        LoginStatus result = javaQq.firstLogin(captcha, loginSig);
         System.out.println("firstLogin = " + result);
     }
 
@@ -89,14 +100,40 @@ public class TestJavaQqImpl {
     public void testIdentify() throws Exception {
         UUWise uuWise = getUUWise();
         FileInputStream fis = new FileInputStream(new File("src/test/resources/test.jpg"));
-        byte[] bytes = new byte[fis.available()];
-        if (fis.read(bytes) != -1)
-            throw new IOException("文件读取不完整");
+        int size = fis.available();
+        byte[] bytes = new byte[size];
+        if (fis.read(bytes) != size)
+            if (fis.available() != 0)
+                throw new IOException("文件读取不完整");
         fis.close();
         String[] results = uuWise.uploadImage(bytes);
         System.out.println("captchaid = " + results[0]);
         System.out.println("captcha = " + results[1]);
         assertEquals("ohbyj", results[1].toLowerCase());
+    }
+
+    @Test
+    public void testClientId() throws Exception {
+        System.out.println("clientid = " + ClientId.getCliendId());
+    }
+
+    @Test
+    public void testSecondLogin() throws Exception {
+        String loginSig = new LoginSig().getLoginSig();
+        Captcha captcha = javaQq.checkCaptcha(loginSig);
+        if (captcha.checkCaptcha() == LoginStatus.NEED_CAPTCHA) {
+            System.out.println("需要获取验证码！");
+            UUWise uuWise = getUUWise();
+            byte[] bytes = new CaptchaUtils().getCaptchaImage(user);
+            String[] results = uuWise.uploadImage(bytes);
+            captcha = new CaptchaUtils().setNewCaptcha(captcha, results[1]);
+        }
+
+        LoginStatus firstLogin = javaQq.firstLogin(captcha, loginSig);
+        if (firstLogin == LoginStatus.SUCCESS) {
+            System.out.println("secondLogin = " + new SecondLogin().login());
+        } else
+            System.out.println("secondLogin = " + "第一次登陆失败！");
     }
 
     private UUWise getUUWise() throws IOException {

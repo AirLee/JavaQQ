@@ -1,4 +1,6 @@
-package com.xiaolanglang.javaqq.login;
+package com.xiaolanglang.javaqq.login.status;
+
+import com.xiaolanglang.javaqq.pattern.PatternUtils;
 
 /**
  * 登录状态检查
@@ -6,7 +8,8 @@ package com.xiaolanglang.javaqq.login;
  */
 public class LoginStatusChecker {
     public LoginStatus checkInLogin(String code) {
-        if ("1".equals(code))
+        String result = new PatternUtils().findFirst("(?<=ptui_checkVC\\(').*?(?=')", code);
+        if ("1".equals(result))
             return LoginStatus.NEED_CAPTCHA;
         else
             return LoginStatus.NEED_NOT_CAPTCHA;

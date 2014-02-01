@@ -7,6 +7,7 @@ package com.xiaolanglang.javaqq.exception;
 public class QqException extends Exception {
 
     public QqException() {
+        super();
     }
 
     public QqException(String message) {

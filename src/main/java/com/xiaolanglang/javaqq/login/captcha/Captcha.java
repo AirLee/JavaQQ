@@ -1,6 +1,6 @@
 package com.xiaolanglang.javaqq.login.captcha;
 
-import com.xiaolanglang.javaqq.login.LoginStatus;
+import com.xiaolanglang.javaqq.login.status.LoginStatus;
 
 /**
  *
@@ -8,10 +8,10 @@ import com.xiaolanglang.javaqq.login.LoginStatus;
  */
 public interface Captcha {
 
-    public LoginStatus getLoginStatus();
-
     public String getCaptcha();
 
     public String getHexUin();
+
+    public LoginStatus checkCaptcha();
 
 }

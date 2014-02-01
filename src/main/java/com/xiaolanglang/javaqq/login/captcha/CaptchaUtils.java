@@ -16,7 +16,7 @@ public class CaptchaUtils {
         return new ResponseUtils().getBytes(httpGet);
     }
 
-    public Captcha getCaptcha(Captcha captcha, String c) {
+    public Captcha setNewCaptcha(Captcha captcha, String c) {
         return CaptchaBuilder.create().pasingResult(captcha).setCaptcha(c).build();
     }
 
