@@ -3,10 +3,7 @@ package com.xiaolanglang.javaqq.httpclient;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpUriRequest;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 /**
  * 处理回复的工具类
@@ -28,13 +25,15 @@ public class ResponseUtils {
 
     public byte[] getBytes(HttpUriRequest httpUriRequest) throws IOException {
         InputStream inputStream = getInputStream(httpUriRequest);
-        int size = inputStream.available();
-        byte[] bytes = new byte[size];
-        if ((inputStream.read(bytes)) != size) {
-            if (inputStream.available() != 0)
-                throw new IOException("文件读取不完整");
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        int ch;
+        byte[] buff = new byte[1024];
+        while ((ch = inputStream.read(buff)) != -1) {
+            byteArrayOutputStream.write(buff, 0, ch);
         }
         inputStream.close();
+        byte[] bytes = byteArrayOutputStream.toByteArray();
+        byteArrayOutputStream.close();
         return bytes;
     }
 

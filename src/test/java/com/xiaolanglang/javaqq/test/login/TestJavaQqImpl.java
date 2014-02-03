@@ -5,10 +5,10 @@ import com.xiaolanglang.javaqq.login.FirstLogin;
 import com.xiaolanglang.javaqq.login.SecondLogin;
 import com.xiaolanglang.javaqq.login.captcha.Captcha;
 import com.xiaolanglang.javaqq.login.captcha.CaptchaBuilder;
-import com.xiaolanglang.javaqq.login.captcha.CaptchaUtils;
 import com.xiaolanglang.javaqq.login.md5.Md5;
 import com.xiaolanglang.javaqq.login.sig.LoginSig;
 import com.xiaolanglang.javaqq.login.status.LoginStatus;
+import com.xiaolanglang.javaqq.token.TokenFactory;
 import com.xiaolanglang.uuwise.UUWise;
 import org.junit.Before;
 import org.junit.Test;
@@ -79,9 +79,9 @@ public class TestJavaQqImpl {
         if (captcha.checkCaptcha() == LoginStatus.NEED_CAPTCHA) {
             System.out.println("需要获取验证码！");
             UUWise uuWise = getUUWise();
-            byte[] bytes = new CaptchaUtils().getCaptchaImage(user);
+            byte[] bytes = captcha.getCaptchaImage(user);
             String[] results = uuWise.uploadImage(bytes);
-            captcha = new CaptchaUtils().setNewCaptcha(captcha, results[1]);
+            captcha = CaptchaBuilder.create().parsingResult(captcha).setCaptcha(results[1]).build();
         }
         LoginStatus result = javaQq.firstLogin(captcha, loginSig);
         System.out.println("firstLogin = " + result);
@@ -89,7 +89,7 @@ public class TestJavaQqImpl {
 
     @Test
     public void testGetBytes() throws Exception {
-        byte[] bytes = new CaptchaUtils().getCaptchaImage("2829320014");
+        byte[] bytes = CaptchaBuilder.create().build().getCaptchaImage("2829320014");
         FileOutputStream fos = new FileOutputStream(new File("src/test/resources/captcha.jpg"));
         fos.write(bytes);
         fos.close();
@@ -124,14 +124,16 @@ public class TestJavaQqImpl {
         if (captcha.checkCaptcha() == LoginStatus.NEED_CAPTCHA) {
             System.out.println("需要获取验证码！");
             UUWise uuWise = getUUWise();
-            byte[] bytes = new CaptchaUtils().getCaptchaImage(user);
+            byte[] bytes = captcha.getCaptchaImage(user);
             String[] results = uuWise.uploadImage(bytes);
-            captcha = new CaptchaUtils().setNewCaptcha(captcha, results[1]);
+//            captcha = .setNewCaptcha(captcha, results[1]);
+            captcha = CaptchaBuilder.create().parsingResult(captcha).setCaptcha(results[1]).build();
         }
 
         LoginStatus firstLogin = javaQq.firstLogin(captcha, loginSig);
         if (firstLogin == LoginStatus.SUCCESS) {
-            System.out.println("secondLogin = " + new SecondLogin().login());
+            new SecondLogin().login();
+            System.out.println("secondLogin = " + TokenFactory.getToken());
         } else
             System.out.println("secondLogin = " + "第一次登陆失败！");
     }

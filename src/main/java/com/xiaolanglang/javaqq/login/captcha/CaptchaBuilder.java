@@ -16,21 +16,16 @@ public class CaptchaBuilder {
     private CaptchaBuilder() {
     }
 
+
     public static CaptchaBuilder create() {
         return new CaptchaBuilder();
     }
-
     public CaptchaBuilder setCaptcha(String captcha) {
         this.captcha = captcha;
         return this;
     }
 
-    public CaptchaBuilder setHexUin(String hexUin) {
-        this.hexUin = hexUin;
-        return this;
-    }
-
-    public CaptchaBuilder parsingResult(String captchaString) {
+     public CaptchaBuilder parsingResult(String captchaString) {
         this.captchaString = captchaString;
         if ("".equals(this.captcha))
             this.captcha = getCaptcha();
@@ -40,7 +35,7 @@ public class CaptchaBuilder {
         return this;
     }
 
-    public CaptchaBuilder pasingResult(Captcha captcha) {
+    public CaptchaBuilder parsingResult(Captcha captcha) {
         if ("".equals(this.captcha))
             this.captcha = captcha.getCaptcha();
         if ("".equals(this.hexUin))
