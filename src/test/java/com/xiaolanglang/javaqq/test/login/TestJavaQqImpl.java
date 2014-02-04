@@ -32,7 +32,7 @@ public class TestJavaQqImpl {
     @Before
     public void setUp() throws Exception {
         this.user = "2829320014";
-        javaQq = new FirstLogin(user, "");
+        javaQq = new FirstLogin(user,Pass.QQPass);
     }
 
     @Test
@@ -126,7 +126,6 @@ public class TestJavaQqImpl {
             UUWise uuWise = getUUWise();
             byte[] bytes = captcha.getCaptchaImage(user);
             String[] results = uuWise.uploadImage(bytes);
-//            captcha = .setNewCaptcha(captcha, results[1]);
             captcha = CaptchaBuilder.create().parsingResult(captcha).setCaptcha(results[1]).build();
         }
 
@@ -139,7 +138,7 @@ public class TestJavaQqImpl {
     }
 
     private UUWise getUUWise() throws IOException {
-        UUWise uuWise = new UUWise("gy911201", "");
+        UUWise uuWise = new UUWise("gy911201",Pass.UUWise);
         uuWise.login();
         uuWise.setCodeType("1106");
         return uuWise;

@@ -1,7 +1,6 @@
 package com.xiaolanglang.javaqq.login.captcha;
 
 import com.xiaolanglang.javaqq.login.status.LoginStatus;
-import com.xiaolanglang.javaqq.login.status.LoginStatusChecker;
 import com.xiaolanglang.javaqq.pattern.PatternUtils;
 
 /**
@@ -20,18 +19,19 @@ public class CaptchaBuilder {
     public static CaptchaBuilder create() {
         return new CaptchaBuilder();
     }
+
     public CaptchaBuilder setCaptcha(String captcha) {
         this.captcha = captcha;
         return this;
     }
 
-     public CaptchaBuilder parsingResult(String captchaString) {
+    public CaptchaBuilder parsingResult(String captchaString) {
         this.captchaString = captchaString;
         if ("".equals(this.captcha))
             this.captcha = getCaptcha();
         if ("".equals(this.hexUin))
             this.hexUin = getHexUin();
-        this.loginStatus = new LoginStatusChecker().checkInLogin(captchaString);
+        this.loginStatus = checkLoginStatus(captchaString);
         return this;
     }
 
@@ -55,4 +55,11 @@ public class CaptchaBuilder {
         return new PatternUtils().findFirst("(?<=',')\\\\x.*?(?='\\);)", captchaString);
     }
 
+    public LoginStatus checkLoginStatus(String code) {
+        String result = new PatternUtils().findFirst("(?<=ptui_checkVC\\(').*?(?=')", code);
+        if ("1".equals(result))
+            return LoginStatus.NEED_CAPTCHA;
+        else
+            return LoginStatus.NEED_NOT_CAPTCHA;
+    }
 }
