@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c23e3b9-06ce-463f-8a0d-277bf69496c0" name="Default" comment="完成获取群列表功能">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/group/Group.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/group/GroupBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/group/Groups.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/group/GroupsFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/group/GroupsUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/retcode/RetcodeChecker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/roll/Roll2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestGroups.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestRoll.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/package-info.java" />
-      <change type="DELETED" beforePath="D:\IdeaProjects\JavaQQ\src\main\java\com\xiaolanglang\javaqq\login\status\LoginStatusChecker.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/xiaolanglang/javaqq/login/captcha/CaptchaBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" afterPath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestJavaQqImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestLogin.java" afterPath="$PROJECT_DIR$/src/test/java/com/xiaolanglang/javaqq/test/login/TestLogin.java" />
+    <list default="true" id="5c23e3b9-06ce-463f-8a0d-277bf69496c0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaQQ.iws" />
@@ -1179,7 +1165,7 @@
       <workItem from="1391024486535" duration="59000" />
       <workItem from="1391182972608" duration="8115000" />
       <workItem from="1391191935800" duration="140000" />
-      <workItem from="1391266078172" duration="25531000" />
+      <workItem from="1391266078172" duration="25542000" />
     </task>
     <task id="LOCAL-00001" summary="重写…………">
       <created>1390929863407</created>
@@ -1213,11 +1199,15 @@
       <created>1391441026115</created>
       <updated>1391441026115</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="完成获取群列表功能">
+      <created>1391530036278</created>
+      <updated>1391530036278</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56394000" />
+    <option name="totallyTimeSpent" value="56405000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
